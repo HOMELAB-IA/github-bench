@@ -1,0 +1,60 @@
+{
+  "tools": [
+    {
+      "name": "Codex CLI",
+      "kind": "Agent de code",
+      "models": "OpenAI · cloud",
+      "description": "Agent de développement qui travaille dans le terminal et peut lire, modifier et exécuter le projet.",
+      "repository": "openai/codex",
+      "url": "https://github.com/openai/codex"
+    },
+    {
+      "name": "Gemini CLI",
+      "kind": "Agent de code",
+      "models": "Google · cloud",
+      "description": "Agent open source en ligne de commande pour explorer un dépôt et réaliser des tâches de développement.",
+      "repository": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli"
+    },
+    {
+      "name": "Aider",
+      "kind": "Pair programming",
+      "models": "API cloud",
+      "description": "Assistant de programmation en terminal qui édite le code et garde les changements dans Git.",
+      "repository": "Aider-AI/aider",
+      "url": "https://github.com/Aider-AI/aider"
+    },
+    {
+      "name": "OpenHands",
+      "kind": "Agent de développement",
+      "models": "API cloud",
+      "description": "Environnement open source pour déléguer des tâches de développement à des agents.",
+      "repository": "OpenHands/OpenHands",
+      "url": "https://github.com/OpenHands/OpenHands"
+    },
+    {
+      "name": "Claude Code",
+      "kind": "Agent de code",
+      "models": "Anthropic · cloud",
+      "description": "Agent de développement en terminal connecté aux modèles Claude via l'API cloud Anthropic.",
+      "repository": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code"
+    },
+    {
+      "name": "Continue",
+      "kind": "Agent de code",
+      "models": "API cloud",
+      "description": "Outils open source pour utiliser des agents de code dans l'éditeur et le terminal.",
+      "repository": "continuedev/continue",
+      "url": "https://github.com/continuedev/continue"
+    },
+    {
+      "name": "Serveurs MCP",
+      "kind": "Connecteurs",
+      "models": "Compatible cloud",
+      "description": "Implémentations de référence pour relier les modèles à des données et services via MCP.",
+      "repository": "modelcontextprotocol/servers",
+      "url": "https://github.com/modelcontextprotocol/servers"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Catalogue editorial de projets open source decouverts sur GitHub.">
+    <meta name="theme-color" content="#f5f4ef">
+    <title>GitHub Bench — projets à explorer</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="./" aria-label="GitHub Bench, accueil">
+        <span class="wordmark-icon" aria-hidden="true">GB</span>
+        <span>GitHub Bench</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="#llm-benchmarks">LLM cloud</a>
+        <a href="#french-tech">French tech</a>
+        <a href="#github-search">Recherche GitHub</a>
+        <a href="#catalog">Catalogue</a>
+      </nav>
+      <a class="header-link" href="https://github.com/HOMELAB-IA/github-bench">Le dépôt <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> CARNET DE VEILLE OPEN SOURCE</p>
+        <h1 id="page-title">Les projets qui <span>méritent un détour.</span></h1>
+        <p class="intro-copy">Une sélection éditoriale de dépôts GitHub utiles, prometteurs ou simplement bien pensés. Chaque fiche explique à quoi sert le projet, pour qui, et comment il a été évalué.</p>
+        <div class="intro-meta">
+          <span id="project-count">Chargement du catalogue…</span>
+          <span class="meta-separator" aria-hidden="true"></span>
+          <span>Mis à jour au fil des découvertes</span>
+        </div>
+      </section>
+
+      <section id="llm-benchmarks" class="benchmark-section" aria-labelledby="benchmark-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MESURES SOURCÉES, PAS DE NOTES INVENTÉES</p>
+            <h2 id="benchmark-title">Bench des LLM cloud</h2>
+          </div>
+          <span id="benchmark-updated" class="snapshot-date">Chargement des données…</span>
+        </div>
+        <p class="section-intro">Comparaison limitée aux modèles proposés via API cloud. Aucun modèle local ou exécuté sur votre machine. Pour chaque fournisseur, le modèle affiché est celui avec l’indice Intelligence le plus élevé disponible; les autres indices concernent ce même modèle.</p>
+
+        <div class="benchmark-panel">
+          <div class="benchmark-controls">
+            <label>
+              <span>Indice comparé</span>
+              <select id="benchmark-metric">
+                <option value="intelligence">Intelligence</option>
+                <option value="coding">Code</option>
+                <option value="agentic">Agent</option>
+              </select>
+            </label>
+            <label>
+              <span>Fournisseur</span>
+              <select id="benchmark-provider">
+                <option value="all">Tous</option>
+              </select>
+            </label>
+            <p id="benchmark-coverage" class="benchmark-coverage" aria-live="polite"></p>
+          </div>
+          <div class="benchmark-legend">
+            <span>Modèle</span>
+            <span>Indice / 100</span>
+            <span>Contexte · prix / 1 M tokens · tool calling</span>
+          </div>
+          <div id="benchmark-chart" class="benchmark-chart" aria-live="polite"></div>
+          <p id="benchmark-error" class="inline-error" hidden></p>
+        </div>
+
+        <div class="source-note">
+          <span>Indices : <a href="https://artificialanalysis.ai/leaderboards/models" target="_blank" rel="noopener noreferrer">Artificial Analysis</a>, relayés dans les métadonnées <a href="https://openrouter.ai/api/v1/models" target="_blank" rel="noopener noreferrer">OpenRouter</a>. Prix et contexte : instantané OpenRouter; tarifs variables selon fournisseur et date.</span>
+          <a href="./data/llm-benchmarks.json">Voir les données brutes ↗</a>
+        </div>
+
+        <div class="tools-heading">
+          <div>
+            <p class="eyebrow">LEURS ÉCOSYSTÈMES</p>
+            <h3>Outils compatibles avec les modèles cloud</h3>
+          </div>
+          <span class="tools-note">Sélection de dépôts, pas un classement qualité</span>
+        </div>
+        <div id="llm-tool-grid" class="llm-tool-grid"></div>
+        <p id="llm-tools-error" class="inline-error" hidden></p>
+
+        <div class="tools-heading growth-heading">
+          <div>
+            <p class="eyebrow">SIGNAUX DE TRACTION GITHUB</p>
+            <h3>Outils qui montent</h3>
+          </div>
+          <span id="growth-updated" class="tools-note"></span>
+        </div>
+        <p class="growth-disclaimer">Rythme indicatif : étoiles totales ÷ jours depuis la création, pour des dépôts de moins de 90 jours. Ce n’est pas une courbe historique, ni une note de qualité.</p>
+        <div id="growing-tool-grid" class="growing-tool-grid"></div>
+        <p id="growing-tools-error" class="inline-error" hidden></p>
+      </section>
+
+      <section id="github-search" class="search-guide" aria-labelledby="search-guide-title">
+        <div class="search-guide-copy">
+          <p class="eyebrow">LANCER UNE RECHERCHE MAINTENANT</p>
+          <h2 id="search-guide-title">Interroger GitHub</h2>
+          <p>Depuis la racine du dépôt, lancez la commande ci-dessous dans PowerShell. Elle interroge l’API publique et écrit des candidats à relire dans un fichier local ignoré par Git.</p>
+          <a class="search-action-link" href="https://github.com/HOMELAB-IA/github-bench/actions/workflows/discover.yml">Après publication : ouvrir le workflow GitHub Actions ↗</a>
+          <p class="search-action-note">Le workflow Actions apparaîtra sur GitHub après l’envoi des changements sur la branche par défaut.</p>
+        </div>
+        <div class="command-panel">
+          <div class="command-controls">
+            <label>
+              <span>Catégorie</span>
+              <select id="local-search-category">
+                <option value="ai">IA, Claude Code, skills &amp; MCP</option>
+                <option value="home-assistant">Home Assistant</option>
+                <option value="trending">Open source en tendance</option>
+                <option value="tools-growth">Outils en forte progression</option>
+                <option value="french-tech">French tech</option>
+                <option value="all">Toutes</option>
+              </select>
+            </label>
+            <label>
+              <span>Sujet (facultatif)</span>
+              <input id="local-search-topic" type="text" placeholder="Claude Code, MCP Home Assistant…">
+            </label>
+          </div>
+          <pre class="command-output"><code id="local-search-command"></code></pre>
+          <div class="command-footer">
+            <button id="copy-search-command" class="copy-command" type="button">Copier la commande</button>
+            <span id="copy-search-status" aria-live="polite"></span>
+          </div>
+          <p class="command-hint">Aucune clé API requise pour un essai; la limite anonyme de recherche GitHub s’applique. Les résultats restent des suggestions non validées.</p>
+        </div>
+      </section>
+
+      <section id="french-tech" class="french-tech-section" aria-labelledby="french-tech-title" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SÉLECTION ÉDITORIALE · GITHUB</p>
+            <h2 id="french-tech-title">French tech à suivre</h2>
+          </div>
+          <span id="french-tech-count" class="tools-note"></span>
+        </div>
+        <p class="section-intro">Des projets français sélectionnés pour leur utilité, leur activité et leur adoption. Ce choix est éditorial, pas un palmarès exhaustif.</p>
+        <div id="french-tech-grid" class="catalog-grid"></div>
+      </section>
+
+      <section class="catalog" aria-labelledby="catalog-title">
+        <span id="catalog" class="anchor-target" aria-hidden="true"></span>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">LE CARNET</p>
+            <h2 id="catalog-title">À explorer</h2>
+          </div>
+          <a class="request-link" href="https://github.com/HOMELAB-IA/github-bench/issues/new?template=deeper-research.yml">Suggérer un sujet <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span class="sr-only">Rechercher dans le catalogue</span>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" placeholder="Rechercher un projet, un usage, un tag…" autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+          <label class="archive-toggle">
+            <input id="show-archived" type="checkbox">
+            <span>Inclure les archives</span>
+          </label>
+        </div>
+
+        <nav class="category-filters" aria-label="Filtrer par catégorie">
+          <button class="filter-chip is-active" type="button" data-category="all" aria-pressed="true">Tout</button>
+          <button class="filter-chip" type="button" data-category="ai" aria-pressed="false">IA, skills &amp; MCP</button>
+          <button class="filter-chip" type="button" data-category="home-assistant" aria-pressed="false">Home Assistant</button>
+          <button class="filter-chip" type="button" data-category="trending" aria-pressed="false">Open source en tendance</button>
+          <button class="filter-chip" type="button" data-category="french-tech" aria-pressed="false">French tech</button>
+        </nav>
+
+        <p id="result-summary" class="result-summary" aria-live="polite"></p>
+        <div id="catalog-grid" class="catalog-grid" aria-live="polite"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <span class="empty-mark" aria-hidden="true">✳</span>
+          <h3>Le carnet s'ouvre.</h3>
+          <p>Aucune fiche publiée pour l'instant. Lancez une recherche depuis l'onglet Actions, puis relisez les candidats avant de les ajouter au catalogue.</p>
+          <a class="button-link" href="https://github.com/HOMELAB-IA/github-bench/actions/workflows/discover.yml">Explorer GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Indépendant, open source, et noté avec transparence.</span>
+      <a href="https://github.com/HOMELAB-IA/github-bench/blob/main/README.md">Méthode &amp; contribution <span aria-hidden="true">↗</span></a>
+    </footer>
+
+    <template id="project-card-template">
+      <article class="project-card">
+        <div class="card-image-wrap">
+          <img class="card-image" alt="" loading="lazy">
+          <div class="image-placeholder" aria-hidden="true"><span class="placeholder-glyph">↗</span><span class="placeholder-label">DÉPÔT GITHUB</span></div>
+          <span class="category-label"></span>
+          <span class="archive-label" hidden>ARCHIVÉ</span>
+        </div>
+        <div class="card-body">
+          <div class="card-topline"><span class="project-owner"></span><span class="review-date"></span></div>
+          <h3 class="project-title"></h3>
+          <p class="project-summary"></p>
+          <p class="project-use-case"></p>
+          <div class="tag-list"></div>
+          <div class="score-row">
+            <div class="score-value"><strong></strong><span>/ 5</span></div>
+            <span class="score-caption">NOTE ÉDITORIALE</span>
+            <details class="score-details">
+              <summary>Barème</summary>
+              <div class="score-breakdown"></div>
+            </details>
+          </div>
+          <div class="card-footer">
+            <span class="repo-stats"></span>
+            <a class="repo-link" target="_blank" rel="noopener noreferrer">Voir le dépôt <span aria-hidden="true">↗</span></a>
+          </div>
+          <a class="image-attribution" target="_blank" rel="noopener noreferrer" hidden></a>
+        </div>
+      </article>
+    </template>
+    <template id="llm-model-row-template">
+      <article class="llm-model-row">
+        <div class="llm-model-name">
+          <span class="llm-provider"></span>
+          <a class="llm-model-link" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+        <div class="llm-score-track">
+          <div class="llm-score-bar"></div>
+        </div>
+        <strong class="llm-score-value"></strong>
+        <div class="llm-model-facts"></div>
+      </article>
+    </template>
+    <template id="llm-tool-card-template">
+      <article class="llm-tool-card">
+        <div class="tool-card-topline"><span class="tool-kind"></span><span class="tool-models"></span></div>
+        <h4 class="tool-name"></h4>
+        <p class="tool-description"></p>
+        <div class="tool-card-footer"><span class="tool-repo-name"></span><a class="tool-repo-link" target="_blank" rel="noopener noreferrer">Voir le dépôt ↗</a></div>
+      </article>
+    </template>
+    <template id="growing-tool-card-template">
+      <article class="growing-tool-card">
+        <div class="growing-tool-image-wrap">
+          <img class="growing-tool-image" alt="" loading="lazy">
+          <div class="image-placeholder" aria-hidden="true"><span class="placeholder-glyph">↗</span><span class="placeholder-label">DÉPÔT GITHUB</span></div>
+        </div>
+        <div class="growing-tool-body">
+          <div class="tool-card-topline"><span class="tool-kind"></span><span class="growth-rate"></span></div>
+          <h4 class="tool-name"></h4>
+          <p class="tool-description"></p>
+          <div class="growth-stats"></div>
+          <div class="tool-card-footer"><span class="tool-repo-name"></span><a class="tool-repo-link" target="_blank" rel="noopener noreferrer">Voir le dépôt ↗</a></div>
+          <a class="image-attribution" target="_blank" rel="noopener noreferrer" hidden></a>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>

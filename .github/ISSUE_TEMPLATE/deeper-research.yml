@@ -1,0 +1,36 @@
+name: Request deeper research
+description: Request a focused GitHub repository search and editorial review.
+title: "[Research] "
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Topic or project
+      description: What should be researched? A focused topic or a GitHub repository URL both work.
+      placeholder: Local-first MCP servers for Home Assistant
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Catalog category
+      options:
+        - AI, Claude Code, skills, tools or MCP
+        - Home Assistant apps, cards or tools
+        - Trending open source
+        - Other GitHub project
+    validations:
+      required: true
+  - type: textarea
+    id: research_questions
+    attributes:
+      label: What should the research answer?
+      description: Mention use cases, integrations, alternatives, or other questions.
+      placeholder: Who is it for, how is it installed, and what are the trade-offs?
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language preference (optional)
+      description: For example, French-language project or documentation.

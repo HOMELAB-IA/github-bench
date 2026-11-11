@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-11",
+  "windowDays": 90,
+  "method": "Étoiles actuelles divisées par le nombre de jours depuis la création du dépôt; seuls les dépôts créés dans les 90 derniers jours sont recherchés.",
+  "tools": [
+    {
+      "name": "Magpie",
+      "repository": "yetone/magpie",
+      "url": "https://github.com/yetone/magpie",
+      "kind": "Routage d'agents",
+      "description": "Un menu de bureau pour associer différents modèles cloud aux agents de code.",
+      "stars": 33995,
+      "createdAt": "2026-09-23",
+      "ageDays": 49,
+      "growthStarsPerDay": 693.8,
+      "image": {
+        "path": "https://raw.githubusercontent.com/yetone/magpie/main/site/public/img/icon-256.png",
+        "alt": "Icône de l'application Magpie",
+        "sourceUrl": "https://github.com/yetone/magpie/blob/main/site/public/img/icon-256.png",
+        "attribution": "Icône du dépôt yetone/magpie"
+      }
+    },
+    {
+      "name": "Lemo Opuscar",
+      "repository": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar",
+      "kind": "Skills créatifs",
+      "description": "Des styles et skills Claude Code pour créer des films stylisés avec du code.",
+      "stars": 14525,
+      "createdAt": "2026-09-26",
+      "ageDays": 46,
+      "growthStarsPerDay": 315.8,
+      "image": {
+        "path": "https://raw.githubusercontent.com/lemomo-ai/lemo-opuscar/main/docs/opuscar98-styles.jpg",
+        "alt": "Exemples visuels de styles créés avec Lemo Opuscar",
+        "sourceUrl": "https://github.com/lemomo-ai/lemo-opuscar/blob/main/docs/opuscar98-styles.jpg",
+        "attribution": "Exemple visuel du dépôt lemomo-ai/lemo-opuscar"
+      }
+    },
+    {
+      "name": "Elephant-Goldfish Model",
+      "repository": "google/elephant-goldfish-model",
+      "url": "https://github.com/google/elephant-goldfish-model",
+      "kind": "Conception logicielle par agents",
+      "description": "Un plugin open source pour structurer la conception et la revue de logiciels avec des agents.",
+      "stars": 17217,
+      "createdAt": "2026-09-13",
+      "ageDays": 59,
+      "growthStarsPerDay": 291.8,
+      "image": {
+        "path": "https://raw.githubusercontent.com/google/elephant-goldfish-model/main/docs/assets/readme-header.svg",
+        "alt": "Visuel de présentation du dépôt Elephant-Goldfish Model",
+        "sourceUrl": "https://github.com/google/elephant-goldfish-model/blob/main/docs/assets/readme-header.svg",
+        "attribution": "Visuel du dépôt google/elephant-goldfish-model"
+      }
+    },
+    {
+      "name": "Coucou",
+      "repository": "Louis-CFM/coucou",
+      "url": "https://github.com/Louis-CFM/coucou",
+      "kind": "Supervision d'agents",
+      "description": "Une app qui suit les agents de code et leurs demandes d'approbation depuis macOS ou iPhone.",
+      "stars": 7116,
+      "createdAt": "2026-09-27",
+      "ageDays": 45,
+      "growthStarsPerDay": 158.1,
+      "image": {
+        "path": "https://raw.githubusercontent.com/Louis-CFM/coucou/main/docs/media/hub-statistics.png",
+        "alt": "Capture de l'écran statistiques de Coucou",
+        "sourceUrl": "https://github.com/Louis-CFM/coucou/blob/main/docs/media/hub-statistics.png",
+        "attribution": "Capture du dépôt Louis-CFM/coucou"
+      }
+    }
+  ]
+}
