@@ -1,0 +1,75 @@
+name: Discover repositories
+
+on:
+  schedule:
+    - cron: "17 9 * * 1"
+  workflow_dispatch:
+    inputs:
+      category:
+        description: Category to explore
+        type: choice
+        required: true
+        default: all
+        options:
+          - all
+          - ai
+          - home-assistant
+          - trending
+          - tools-growth
+          - french-tech
+      topic:
+        description: Optional topic for focused research
+        type: string
+        required: false
+      limit:
+        description: Maximum number of candidates
+        type: choice
+        required: true
+        default: "20"
+        options:
+          - "10"
+          - "20"
+          - "50"
+          - "100"
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Search GitHub repositories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCOVERY_CATEGORY: ${{ inputs.category }}
+          DISCOVERY_TOPIC: ${{ inputs.topic }}
+          DISCOVERY_LIMIT: ${{ inputs.limit || '20' }}
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
+            for category in ai home-assistant trending tools-growth french-tech; do
+              python scripts/discover.py \
+                --category "$category" \
+                --limit "$DISCOVERY_LIMIT" \
+                --output "candidates/${category}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}.json"
+            done
+          else
+            python scripts/discover.py \
+              --category "${DISCOVERY_CATEGORY:-all}" \
+              --topic "${DISCOVERY_TOPIC:-}" \
+              --limit "$DISCOVERY_LIMIT" \
+              --output "candidates/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}.json"
+          fi
+      - name: Save review-only candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-bench-candidates-${{ github.run_id }}
+          path: candidates/*.json
+          if-no-files-found: error
+          retention-days: 30

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "id": "lovelace-mushroom",
+      "name": "Mushroom",
+      "fullName": "piitaya/lovelace-mushroom",
+      "url": "https://github.com/piitaya/lovelace-mushroom",
+      "category": "home-assistant",
+      "summary": "Une collection de cartes Lovelace pour composer des tableaux de bord Home Assistant cohérents, lisibles et faciles à personnaliser.",
+      "tags": ["Home Assistant", "Lovelace", "Dashboard", "Interface"],
+      "useCases": ["Construire une interface de maison connectée", "Personnaliser les commandes et états des entités"],
+      "publishedAt": "2026-11-11",
+      "reviewedAt": "2026-11-11",
+      "status": "published",
+      "score": {
+        "fit": 5,
+        "usability": 4,
+        "documentation": 5,
+        "maintenance": 4
+      },
+      "starsAtReview": 5259,
+      "lastPushedAt": "2026-10-20",
+      "image": {
+        "path": "https://raw.githubusercontent.com/piitaya/lovelace-mushroom/main/docs/images/editor-cards.png",
+        "alt": "Capture de cartes Mushroom configurées pour un tableau de bord Home Assistant",
+        "sourceUrl": "https://github.com/piitaya/lovelace-mushroom/blob/main/docs/images/editor-cards.png",
+        "attribution": "Capture du dépôt piitaya/lovelace-mushroom"
+      }
+    },
+    {
+      "id": "paperasse",
+      "name": "Paperasse",
+      "fullName": "romainsimon/paperasse",
+      "url": "https://github.com/romainsimon/paperasse",
+      "category": "ai",
+      "frenchTech": true,
+      "summary": "Des skills pour agents IA spécialisés dans les démarches et métiers de la bureaucratie française.",
+      "tags": ["Agents IA", "Skills", "France", "Administration"],
+      "useCases": ["Aider à préparer une démarche administrative française", "Spécialiser un agent sur un métier réglementé"],
+      "publishedAt": "2026-11-11",
+      "reviewedAt": "2026-11-11",
+      "status": "published",
+      "score": {
+        "fit": 5,
+        "usability": 4,
+        "documentation": 4,
+        "maintenance": 4
+      },
+      "starsAtReview": 2588,
+      "lastPushedAt": "2026-11-10",
+      "image": {
+        "path": "https://raw.githubusercontent.com/romainsimon/paperasse/master/assets/banner.jpg",
+        "alt": "Bannière Paperasse présentant des skills IA pour la bureaucratie française",
+        "sourceUrl": "https://github.com/romainsimon/paperasse/blob/master/assets/banner.jpg",
+        "attribution": "Visuel du dépôt romainsimon/paperasse"
+      }
+    },
+    {
+      "id": "meilisearch",
+      "name": "Meilisearch",
+      "fullName": "meilisearch/meilisearch",
+      "url": "https://github.com/meilisearch/meilisearch",
+      "category": "trending",
+      "frenchTech": true,
+      "summary": "Un moteur de recherche à intégrer à une application, avec recherche instantanée, filtres et pertinence réglable.",
+      "tags": ["Recherche", "API", "Indexation", "French tech"],
+      "useCases": ["Ajouter une recherche plein texte à un produit", "Explorer et filtrer un catalogue de données"],
+      "publishedAt": "2026-11-11",
+      "reviewedAt": "2026-11-11",
+      "status": "published",
+      "score": {
+        "fit": 5,
+        "usability": 4,
+        "documentation": 5,
+        "maintenance": 5
+      },
+      "starsAtReview": 59837,
+      "lastPushedAt": "2026-11-10",
+      "image": {
+        "path": "https://raw.githubusercontent.com/meilisearch/meilisearch/main/assets/demo-light.gif",
+        "alt": "Capture animée de l'interface de recherche de démonstration Meilisearch",
+        "sourceUrl": "https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif",
+        "attribution": "Démonstration du dépôt meilisearch/meilisearch"
+      }
+    },
+    {
+      "id": "suite-meet",
+      "name": "La Suite Meet",
+      "fullName": "suitenumerique/meet",
+      "url": "https://github.com/suitenumerique/meet",
+      "category": "trending",
+      "frenchTech": true,
+      "summary": "Une application open source de visioconférence intégrable aux outils collaboratifs, fondée sur LiveKit.",
+      "tags": ["Visioconférence", "LiveKit", "Django", "React", "French tech"],
+      "useCases": ["Organiser des visioconférences", "Intégrer la vidéo à une suite collaborative"],
+      "publishedAt": "2026-11-11",
+      "reviewedAt": "2026-11-11",
+      "status": "published",
+      "score": {
+        "fit": 4,
+        "usability": 3,
+        "documentation": 4,
+        "maintenance": 5
+      },
+      "starsAtReview": 2477,
+      "lastPushedAt": "2026-11-10",
+      "image": {
+        "path": "https://raw.githubusercontent.com/suitenumerique/meet/main/src/sdk/library/docs/demo.gif",
+        "alt": "Capture animée du formulaire de création d'événement de la démo SDK La Suite Meet",
+        "sourceUrl": "https://github.com/suitenumerique/meet/blob/main/src/sdk/library/docs/demo.gif",
+        "attribution": "Démonstration SDK du dépôt suitenumerique/meet"
+      }
+    },
+    {
+      "id": "coucou",
+      "name": "Coucou",
+      "fullName": "Louis-CFM/coucou",
+      "url": "https://github.com/Louis-CFM/coucou",
+      "category": "ai",
+      "summary": "Une app macOS et iPhone pour suivre plusieurs agents de code et approuver leurs demandes depuis la barre de menu.",
+      "tags": ["Agents de code", "macOS", "iPhone", "Supervision"],
+      "useCases": ["Suivre plusieurs agents de développement", "Valider une demande d'agent sans rester devant le terminal"],
+      "publishedAt": "2026-11-11",
+      "reviewedAt": "2026-11-11",
+      "status": "published",
+      "score": {
+        "fit": 4,
+        "usability": 4,
+        "documentation": 4,
+        "maintenance": 4
+      },
+      "starsAtReview": 7116,
+      "lastPushedAt": "2026-11-06",
+      "image": {
+        "path": "https://raw.githubusercontent.com/Louis-CFM/coucou/main/docs/media/hub-statistics.png",
+        "alt": "Capture de l'écran statistiques de l'application Coucou",
+        "sourceUrl": "https://github.com/Louis-CFM/coucou/blob/main/docs/media/hub-statistics.png",
+        "attribution": "Capture du dépôt Louis-CFM/coucou"
+      }
+    }
+  ]
+}

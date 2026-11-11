@@ -1,0 +1,28 @@
+name: Archive or remove a catalog entry
+description: Ask a maintainer to archive or remove a published project.
+title: "[Catalog] "
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Catalog entry
+      description: Provide the catalog name, GitHub repository URL, or both.
+      placeholder: https://github.com/owner/repository
+    validations:
+      required: true
+  - type: dropdown
+    id: action
+    attributes:
+      label: Requested action
+      options:
+        - Archive (keep the record in Git history)
+        - Remove from the published catalog
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason
+      description: Explain why this entry should be archived or removed.
+    validations:
+      required: true
